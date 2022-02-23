@@ -8,12 +8,10 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.models.annotations.injectorspecific.*;
 
-import javax.annotation.Resource;
+import org.apache.sling.api.resource.Resource;
+
 import javax.inject.Inject;
 
 @Model(adaptables = SlingHttpServletRequest.class,
@@ -21,8 +19,13 @@ import javax.inject.Inject;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class AuthorImpl implements Author{
 
+
+
     @SlingObject
     ResourceResolver resourceResolver;
+
+    @Self
+    SlingHttpServletRequest slingHttpServletRequest;
 
     @ScriptVariable
     Page currentPage;
