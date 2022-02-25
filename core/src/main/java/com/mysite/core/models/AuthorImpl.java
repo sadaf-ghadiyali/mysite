@@ -1,16 +1,13 @@
-package com.mysite.core.models.Impl;
+package com.mysite.core.models;
 
 import com.day.cq.wcm.api.Page;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
-import com.mysite.core.models.Author;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.*;
 import org.apache.sling.models.annotations.injectorspecific.*;
-
-import org.apache.sling.api.resource.Resource;
 
 import javax.inject.Inject;
 
