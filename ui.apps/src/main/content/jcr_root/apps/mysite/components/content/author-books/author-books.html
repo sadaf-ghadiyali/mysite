@@ -1,0 +1,32 @@
+<h1> Author Books</h2>
+<div data-sly-use.books = "com.mysite.core.models.AuthorBooks"> 
+	<h3>${books.authorName}'s Books:</h3>
+    <div data-sly-list.item = "${books.authorBooks}">
+    	<p>Book: ${item}</p>
+     </div>
+     <p> All Books: ${books.authorBooks @ join=", "}</p>
+	========================== USING MAP ================================
+    <div data-sly-list.item="${books.bookDetailsWithMap}">
+        ---------------Book : ${itemList.count}--------------
+        <p> Book : <b>${item.bookname} </b></p>
+        <p> Genre : <b>${item.bookgenre}</b> </p>
+        <p> Published : <b>${item.bookpublishyear}</b> </p>
+    </div>
+	=========================USING BEAN==================================
+    <div data-sly-list.item="${books.bookDetailsWithBean}">
+        ---------------Book : ${itemList.count}--------------
+        <p> Book : <b>${item.bookName} </b></p>
+        <p> Date : <b>${'MMM dd,yyyy' @ format=item.publishDate}</b> </p>
+        <p> Copies : <b>${item.copies}</b> </p>
+    </div>
+    ================== USING NESTED MULTIFIELD ====================
+    <div data-sly-list="${books.bookDetailsWithNestedMultifield}">
+        ---------------Book : ${itemList.count}--------------
+        <p> Book : <b>${item.bookName} </b></p>
+        <div data-sly-list.edition="${item.bookEditions}">
+            <p> Book Edition : <b>${edition.bookEdition} </b></p>
+            <p> Published Date : <b>${'MMM dd,yyyy' @ format=edition.editionDate}</b> </p>
+        </div>
+    </div>
+
+</div>
