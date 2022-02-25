@@ -101,3 +101,4 @@ reports/
 
 # Others
 dispatcher/src/conf.d/variables/default.vars
+core/src/main/java/com/mysite/core/models/AuthorImpl.java

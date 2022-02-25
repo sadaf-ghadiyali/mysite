@@ -9,5 +9,5 @@ public interface XmlExporter {
     public String getDescription();
     public List<String> getBooks();
     public Calendar getDate();
-
+    
 }
